@@ -15,9 +15,9 @@ The SpacePack is written using the shell, in order to quickly deploy LNMP(Linux,
 ### How to use
 
 ```bash
-$ wget https://raw.githubusercontent.com/Vtrois/SpacePack/master/auto-fdisk.sh
-$ chmod +x auto-fdisk.sh
-$ ./auto-fdisk.sh
+wget https://raw.githubusercontent.com/Vtrois/SpacePack/master/auto-fdisk.sh
+chmod +x auto-fdisk.sh
+./auto-fdisk.sh
 ```
 
 ## License
