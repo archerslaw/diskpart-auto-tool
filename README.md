@@ -1,5 +1,7 @@
 # Auto fdisk
 
+Auto fdisk tool for Linux
+
 ## Demo
 
 ![Auto fdisk](http://i2.bvimg.com/1949/2bb849d083e33b6d.png) 
