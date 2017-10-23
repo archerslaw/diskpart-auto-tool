@@ -24,13 +24,13 @@ else
 	exit 1
 fi
 echo -e "\n\033[36mStep 2: Show all active disks:\033[0m"
-fdisk -l 2>/dev/null | grep -o "Disk /dev/vd[b-z]"
+fdisk -l 2>/dev/null | grep -o "Disk /dev/.*vd[b-z]"
 echo -e -n "\n\033[36mStep 3: Please choose the disk(e.g., /dev/vdb and q to quit):\033[0m"
 read Disk
 if [ $Disk == q ];then
 	exit
 fi
-until fdisk -l 2>/dev/null | grep -o "Disk /dev/vd[b-z]" | grep "Disk $Disk" &>/dev/null;do
+until fdisk -l 2>/dev/null | grep -o "Disk /dev/.*vd[b-z]" | grep "Disk $Disk" &>/dev/null;do
 echo -e -n "\033[31mOops, something went wrong, please try again (e.g., /dev/vdb or q to quit):\033[0m"
 	read Disk
 	if [ $Disk == q ];then
