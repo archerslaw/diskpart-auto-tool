@@ -53,6 +53,8 @@ while mount | grep "$Disk" > /dev/null 2>&1;do
 		for i in `mount | grep "$Disk" | awk '{print $3}'`;do
 			fuser -km $i >/dev/null
 			umount $i >/dev/null
+			temp=`echo $Disk | sed 's;/;\\\/;g'`
+			sed -i -e "/^$temp/d" /etc/fstab
 			sleep 2
 		done
 		echo -e "\033[32mSuccess, the disk is unloaded!\033[0m"
