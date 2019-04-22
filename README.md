@@ -9,8 +9,7 @@ The SpacePack is written using the shell, in order to quickly deploy LNMP(Linux,
 ## Auto fdisk
 
 ### Demo
-
-![Auto fdisk](https://bbs.huaweicloud.com/forum/thread-1322-1-1.html) 
+  - https://bbs.huaweicloud.com/forum/thread-1322-1-1.html
 
 ### How to use
 
