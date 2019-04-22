@@ -3,7 +3,7 @@
 # Author: Vtrois <seaton@vtrois.com>
 # Project URL: https://www.vtrois.com
 # Description: Auto fdisk for SpacePack Tools
-# Github URL: https://github.com/Vtrois/SpacePack
+# Github URL: https://github.com/archerslaw/SpacePack
 
 export PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/root/bin
 clear
