@@ -1,7 +1,6 @@
 #!/bin/bash
 
-# Author: Vtrois <seaton@vtrois.com>
-# Project URL: https://www.vtrois.com
+# Author: Archers Law <archerslaw@163.com>
 # Description: Auto fdisk for SpacePack Tools
 # Github URL: https://github.com/archerslaw/SpacePack
 
