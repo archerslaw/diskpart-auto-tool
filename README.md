@@ -1,6 +1,6 @@
 # SpacePack
 
-The SpacePack is written using the shell, in order to quickly deploy LNMP(Linux, Nginx/Tengine/OpenResty, MySQL in a production environment/MariaDB/Percona, PHP), applicable to CentOS 5+ 、Ubuntu 12+、Debian 7+、CoreOS、SUSE 11+、openSUSE 12+
+The SpacePack is written using the shell, in order to quickly deploy LNMP(Linux, Nginx/Tengine/OpenResty, MySQL in a production environment/MariaDB/Percona, PHP), applicable to CentOS/RHEL/Oracle 5+、Fedora、Ubuntu 12+、Debian 7+、CoreOS、SUSE 11+、openSUSE 12+、EulerOS、Gentoo ...
 
 ## Table of contents
 
