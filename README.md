@@ -26,3 +26,8 @@ The SpacePack is written using the shell, in order to quickly deploy LNMP(Linux,
 
 - The SpacePack documentation is licensed under the CC BY 4.0 License:
   - https://creativecommons.org/licenses/by/4.0
+
+## Contact & Contribute
+For information on how to contribute to it, please feel free to contact me with email or send pull requests directly.
+
+-- End of broadcast
