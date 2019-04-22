@@ -10,12 +10,12 @@ The SpacePack is written using the shell, in order to quickly deploy LNMP(Linux,
 
 ### Demo
 
-![Auto fdisk](http://i2.bvimg.com/1949/2bb849d083e33b6d.png) 
+![Auto fdisk](https://bbs.huaweicloud.com/forum/thread-1322-1-1.html) 
 
 ### How to use
 
 ```bash
-# wget https://raw.githubusercontent.com/Vtrois/SpacePack/master/auto-fdisk.sh
+# wget https://raw.githubusercontent.com/archerslaw/SpacePack/master/auto-fdisk.sh
 # chmod +x auto-fdisk.sh
 # ./auto-fdisk.sh
 ```
