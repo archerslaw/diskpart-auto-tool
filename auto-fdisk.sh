@@ -7,11 +7,11 @@
 export PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/root/bin
 clear
 printf "
-===========================================================================
+================================================================================================
                                 Auto fdisk
-      SpacePack tools for CentOS, CoreOS, Debian, openSUSE and Ubuntu
-   For more information please visit https://github.com/Vtrois/SpacePack
-===========================================================================
+SpacePack tools for CentOS/RHEL/Oracle/Fedora/CoreOS/Debian/SUSE/openSUSE/EulerOS/Gentoo/Ubuntu.
+For more information, please visit https://github.com/archerslaw/SpacePack
+================================================================================================
 "
 echo -e "\n\033[36mStep 1: Initializing script and check root privilege\033[0m"
 if [ "$(id -u)" = "0" ];then  
