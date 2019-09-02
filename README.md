@@ -1,30 +1,28 @@
-# SpacePack
+# diskpart-auto-tool
 
-The SpacePack is written using the shell, in order to quickly deploy LNMP(Linux, Nginx/Tengine/OpenResty, MySQL in a production environment/MariaDB/Percona, PHP), applicable to CentOS/RHEL/Oracle 5+、Fedora、Ubuntu 12+、Debian 7+、CoreOS、SUSE 11+、openSUSE 12+、EulerOS、Gentoo ...
+The LinuxVMDataDiskAutoInitialize.sh is written using the shell that applicable to CentOS/RHEL/Oracle 5+、Fedora、Ubuntu 12+、Debian 7+、CoreOS、SUSE 11+、openSUSE 12+、EulerOS、Gentoo Datadisk format...
 
-## Table of contents
+WinVMDataDiskAutoInitialize.ps1 is written using the powershell that applicable to Windows Server Datadisk extend and format...
 
-- [Auto fdisk](#auto-fdisk)
-
-## Auto fdisk
-
-### Demo
+### Linux Demo
   - https://bbs.huaweicloud.com/forum/thread-1322-1-1.html
 
 ### How to use
-
+#### For LinuxVMDataDiskAutoInitialize.sh 
 ```bash
-# wget https://raw.githubusercontent.com/archerslaw/SpacePack/master/auto-fdisk.sh
-# chmod +x auto-fdisk.sh
-# ./auto-fdisk.sh
+# wget https://raw.githubusercontent.com/archerslaw/diskpart-auto-tool/master/LinuxVMDataDiskAutoInitialize.sh
+# chmod +x LinuxVMDataDiskAutoInitialize.sh
+# bash LinuxVMDataDiskAutoInitialize.sh
 ```
+#### For WinVMDataDiskAutoInitialize.ps1
+Just double-kick it
 
 ## License
 
-- The SpacePack scripts files are licensed under the Apache License 2.0:
+- The diskpart-auto-tool scripts files are licensed under the Apache License 2.0:
   - http://www.apache.org/licenses/LICENSE-2.0.html
 
-- The SpacePack documentation is licensed under the CC BY 4.0 License:
+- The diskpart-auto-tool documentation is licensed under the CC BY 4.0 License:
   - https://creativecommons.org/licenses/by/4.0
 
 ## Contact & Contribute
