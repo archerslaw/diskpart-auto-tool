@@ -1,7 +1,3 @@
-# Author: Archers Law <archerslaw@163.com>
-# Description: Auto diskpart tool for Windows OS
-# Github URL: https://github.com/archerslaw/diskpart-auto-tool
-
 $diskpartCmd = 'LIST DISK'
 $disks = $diskpartCmd | diskpart.exe
 $volumepartCmd = 'LIST VOLUME'
@@ -14,7 +10,7 @@ $volumes
 
 foreach ($line in $disks)
 {
-	if ($line -match 'Disk (?<DiskNumber>\d+) | 鍗?(?<VolumeNumber>\d+)')
+	if ($line -match 'Disk (?<DiskNumber>\d+) | 卷(?<VolumeNumber>\d+)')
 	{
 		$diskNumber = $Matches.DiskNumber
 		if ([int]$diskNumber -ge 1)
@@ -27,7 +23,7 @@ foreach ($line in $disks)
 			@"
 			Write-Host "Set ONLINE and clear READONLY with DataDisk:" $diskNumber
 			$diskpartCmd | diskpart.exe | Out-Null
-			Start-Sleep -Seconds 0.5
+			Start-Sleep -Seconds 0.1
 		}
 		else
 		{
@@ -52,7 +48,7 @@ foreach ($line in $volumes)
         $volumeNumber = $Matches.VolumeNumber
 		Write-Host "Print the extend Volume list info:" $volumeNumber
 
-		if ([int]$volumeNumber -ge 1)
+		if ([int]$volumeNumber -ge 2)
 		{
 		    $volumepartCmd = "@
 				SELECT VOLUME $volumeNumber
@@ -62,7 +58,7 @@ foreach ($line in $volumes)
 			Write-Host "Start to extend the DataDisk:" $volumeNumber
 		    $volumepartCmd | diskpart.exe | Out-Null
 			
-			Start-Sleep -Seconds 1
+			Start-Sleep -Seconds 0.3
 			Write-Host "Complete to extend the DataDisk:" $volumeNumber
 		}
 		else
@@ -97,7 +93,7 @@ foreach ($line in $disks)
 		$FreeSize = $Matches.Free
 		Write-Host "Print the Disk free size:" $FreeSize
 		
-		if ([int]$diskNumber -ge 2)
+		if ([int]$diskNumber -ge 1)
 		{
 			if ([int]$FreeSize -gt 0)
 			{
@@ -111,7 +107,7 @@ foreach ($line in $disks)
 				Write-Host "Start to initialize the DataDisk:" $diskNumber
 		    	$diskpartCmd | diskpart.exe | Out-Null
 			
-				Start-Sleep -Seconds 1
+				Start-Sleep -Seconds 0.3
 				#cmd.exe /c "echo Y | FORMAT $($nextDriveLetter): /Q /V:DataDisk$diskNumber"
 				Write-Host "Complete to initialize the DataDisk:" $diskNumber
 			}
@@ -130,3 +126,13 @@ foreach ($line in $disks)
 		Write-Host "This line has no any Disk info at all."
 	}
 }
+
+$diskpartCmd = 'LIST DISK'
+$disks = $diskpartCmd | diskpart.exe
+$volumepartCmd = 'LIST VOLUME'
+$volumes = $volumepartCmd | diskpart.exe
+
+Write-Host "Print the disk list info:"
+$disks
+Write-Host "Print the volume list info:"
+$volumes
