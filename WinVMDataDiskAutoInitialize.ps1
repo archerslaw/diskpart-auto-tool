@@ -1,3 +1,7 @@
+# Author: Archers Law <archerslaw@163.com>
+# Description: Auto diskpart tool for Windows OS
+# Github URL: https://github.com/archerslaw/diskpart-auto-tool
+
 $diskpartCmd = 'LIST DISK'
 $disks = $diskpartCmd | diskpart.exe
 $volumepartCmd = 'LIST VOLUME'
