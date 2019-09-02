@@ -10,7 +10,7 @@ $volumes
 
 foreach ($line in $disks)
 {
-	if ($line -match 'Disk (?<DiskNumber>\d+) | 卷 (?<VolumeNumber>\d+)')
+	if ($line -match 'Disk (?<DiskNumber>\d+) | 鍗?(?<VolumeNumber>\d+)')
 	{
 		$diskNumber = $Matches.DiskNumber
 		if ([int]$diskNumber -ge 1)
@@ -43,7 +43,7 @@ $volumes
 
 foreach ($line in $volumes)
 {
-    if ($line -match 'Volume (?<VolumeNumber>\d+) | 卷 (?<VolumeNumber>\d+)')
+    if ($line -match 'Volume (?<VolumeNumber>\d+) | 卷(?<VolumeNumber>\d+)')
     {
         $volumeNumber = $Matches.VolumeNumber
 		Write-Host "Print the extend Volume list info:" $volumeNumber
@@ -80,7 +80,7 @@ $disks
 foreach ($line in $disks)
 {
     if ($line -match 'Disk (?<DiskNumber>\d+) \s+(Online|Offline)\s+(?<Size>\d+) GB\s+(?<Free>\d+) | 
-	卷 (?<VolumeNumber>\d+) \s+(联机|脱机)\s+(?<Size>\d+) GB\s+(?<Free>\d+)')
+	磁盘(?<VolumeNumber>\d+) \s+(联机|脱机)\s+(?<Size>\d+) GB\s+(?<Free>\d+)')
     {
         $nextDriveLetter = [char[]](67..90) | 
         Where-Object { (Get-WmiObject -Class Win32_LogicalDisk | 
