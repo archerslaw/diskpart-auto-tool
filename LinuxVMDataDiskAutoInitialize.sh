@@ -1,17 +1,17 @@
 #!/bin/bash
 
 # Author: Archers Law <archerslaw@163.com>
-# Description: Auto fdisk for SpacePack Tools
-# Github URL: https://github.com/archerslaw/SpacePack
+# Description: Auto diskpart tool for Linux OS
+# Github URL: https://github.com/archerslaw/diskpart-auto-tool
 
 export PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/root/bin
 clear
 printf "
-================================================================================================
-                                Auto fdisk
-SpacePack tools for CentOS/RHEL/Oracle/Fedora/CoreOS/Debian/SUSE/openSUSE/EulerOS/Gentoo/Ubuntu.
-For more information, please visit https://github.com/archerslaw/SpacePack
-================================================================================================
+=================================================================================================
+                                DiskpartAutoTool 
+DiskpartAutoTool for CentOS/RHEL/Oracle/Fedora/CoreOS/Debian/SUSE/openSUSE/EulerOS/Gentoo/Ubuntu.
+For more information, please visit https://github.com/archerslaw/diskpart-auto-tool
+=================================================================================================
 "
 echo -e "\n\033[36mStep 1: Initializing script and check root privilege\033[0m"
 if [ "$(id -u)" = "0" ];then  
