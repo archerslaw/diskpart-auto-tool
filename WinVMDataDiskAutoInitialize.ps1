@@ -2,6 +2,8 @@
 # Description: Auto diskpart tool for Windows OS	
 # Github URL: https://github.com/archerslaw/diskpart-auto-tool
 
+Set-ExecutionPolicy Bypass -Force
+
 $diskpartCmd = 'LIST DISK'
 $disks = $diskpartCmd | diskpart.exe
 $volumepartCmd = 'LIST VOLUME'
@@ -14,7 +16,7 @@ $volumes
 
 foreach ($line in $disks)
 {
-	if ($line -match 'Disk (?<DiskNumber>\d+) | 卷(?<VolumeNumber>\d+)')
+	if ($line -match 'Disk\s+(?<DiskNumber>\d+) | 磁盘\s+(?<DiskNumber>\d+)')
 	{
 		$diskNumber = $Matches.DiskNumber
 		if ([int]$diskNumber -ge 1)
@@ -47,7 +49,7 @@ $volumes
 
 foreach ($line in $volumes)
 {
-    if ($line -match 'Volume (?<VolumeNumber>\d+) | 卷(?<VolumeNumber>\d+)')
+    if ($line -match 'Volume\s+(?<VolumeNumber>\d+) | 卷\s+(?<VolumeNumber>\d+)')
     {
         $volumeNumber = $Matches.VolumeNumber
 		Write-Host "Print the extend Volume list info:" $volumeNumber
@@ -83,8 +85,7 @@ $disks
 
 foreach ($line in $disks)
 {
-    if ($line -match 'Disk (?<DiskNumber>\d+) \s+(Online|Offline)\s+(?<Size>\d+) GB\s+(?<Free>\d+) | 
-	磁盘(?<VolumeNumber>\d+) \s+(联机|脱机)\s+(?<Size>\d+) GB\s+(?<Free>\d+)')
+    if ($line -match 'Disk\s+(?<DiskNumber>\d+)\s+(Online|Offline)\s+(?<Size>\d+)\s+GB\s+(?<Free>\d+)|磁盘\s+(?<DiskNumber>\d+)\s+(联机|脱机)\s+(?<Size>\d+)\s+GB\s+(?<Free>\d+)')
     {
         $nextDriveLetter = [char[]](67..90) | 
         Where-Object { (Get-WmiObject -Class Win32_LogicalDisk | 
@@ -112,7 +113,6 @@ foreach ($line in $disks)
 		    	$diskpartCmd | diskpart.exe | Out-Null
 			
 				Start-Sleep -Seconds 0.3
-				#cmd.exe /c "echo Y | FORMAT $($nextDriveLetter): /Q /V:DataDisk$diskNumber"
 				Write-Host "Complete to initialize the DataDisk:" $diskNumber
 			}
 			else
