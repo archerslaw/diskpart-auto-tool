@@ -23,7 +23,7 @@ else
 	exit 1
 fi
 echo -e "\n\033[36mStep 2: Show all active disks:\033[0m"
-fdisk -l 2>/dev/null | grep -oE "Disk /dev/.*d[a-z]" | grep -v "/dev/vda"
+fdisk -l 2>/dev/null | grep -o "Disk /dev/.*d[a-z]" | grep -v "/dev/vda"
 echo -e -n "\n\033[36mStep 3: Please choose the disk(e.g.: /dev/vdb and q to quit):\033[0m"
 read Disk
 if [ $Disk == q ];then
