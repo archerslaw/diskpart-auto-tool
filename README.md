@@ -16,7 +16,8 @@ WinVMDataDiskAutoInitialize.ps1 is written using the powershell that applicable 
 ```
 #### For WinVMDataDiskAutoInitialize.ps1
 ```
-Download the WinVMDataDiskAutoInitialize.ps1 and double-kick it
+Download the WinVMDataDiskAutoInitialize.ps1 and right double-kick it running with PowerShell
+
 https://raw.githubusercontent.com/archerslaw/diskpart-auto-tool/master/WinVMDataDiskAutoInitialize.ps1
 ```
 
