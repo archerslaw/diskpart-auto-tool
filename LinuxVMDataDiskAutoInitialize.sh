@@ -23,14 +23,14 @@ else
 	exit 1
 fi
 echo -e "\n\033[36mStep 2: Show all active disks:\033[0m"
-fdisk -l 2>/dev/null | grep -o "Disk /dev/.*d[a-z]" | grep -v "/dev/vda"
-echo -e -n "\n\033[36mStep 3: Please choose the disk(e.g.: /dev/vdb and q to quit):\033[0m"
+fdisk -l 2>/dev/null | grep -o "Disk /dev/.*vd[b-z]"
+echo -e -n "\n\033[36mStep 3: Please choose the disk(e.g., /dev/vdb and q to quit):\033[0m"
 read Disk
 if [ $Disk == q ];then
 	exit
 fi
-until fdisk -l 2>/dev/null | grep -o "Disk /dev/.*d[a-z]" | grep -v "/dev/vda" | grep "Disk $Disk" &>/dev/null;do
-echo -e -n "\033[31mOops, something went wrong, please try again (e.g.: /dev/vdb or q to quit):\033[0m"
+until fdisk -l 2>/dev/null | grep -o "Disk /dev/.*vd[b-z]" | grep "Disk $Disk" &>/dev/null;do
+echo -e -n "\033[31mOops, something went wrong, please try again (e.g., /dev/vdb or q to quit):\033[0m"
 	read Disk
 	if [ $Disk == q ];then
 		exit
@@ -92,7 +92,7 @@ mkfs.ext4 ${1}1
 fdisk_mkfs $Disk > /dev/null 2>&1
 echo -e "\033[32mSuccess, the disk has been partitioned and formatted!\033[0m"
 echo -e "\n\033[36mStep 5: Make a directory and mount it\033[0m"
-echo -e -n "\033[33mPlease enter a location to mount (e.g.: /mnt/data):\033[0m"
+echo -e -n "\033[33mPlease enter a location to mount (e.g., /data):\033[0m"
 read Mount
 mkdir $Mount > /dev/null 2>&1
 mount ${Disk}1 $Mount
