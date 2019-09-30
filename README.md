@@ -9,17 +9,17 @@ WinVMDataDiskAutoInitialize.ps1 is written using the powershell that applicable 
 
 ### How to use
  - For LinuxVMDataDiskAutoInitialize.sh 
-  ```bash
+   ```bash
   # wget https://raw.githubusercontent.com/archerslaw/diskpart-auto-tool/master/LinuxVMDataDiskAutoInitialize.sh
   # chmod +x LinuxVMDataDiskAutoInitialize.sh
   # bash LinuxVMDataDiskAutoInitialize.sh
-  ```
+   ```
  - For WinVMDataDiskAutoInitialize.ps1
-  ```
+   ```
   Download the WinVMDataDiskAutoInitialize.ps1 and right double-kick it running with PowerShell
-
+  
   https://raw.githubusercontent.com/archerslaw/diskpart-auto-tool/master/WinVMDataDiskAutoInitialize.ps1
-  ```
+   ```
 
 ## License
 
