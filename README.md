@@ -4,7 +4,7 @@ The LinuxVMDataDiskAutoInitialize.sh is written using the shell that applicable 
 
 WinVMDataDiskAutoInitialize.ps1 is written using the powershell that applicable to Windows Server Datadisk extend and format...
 
-### Linux Demo
+### Demo for Linux
   - https://bbs.huaweicloud.com/forum/thread-1322-1-1.html
 
 ### How to use
