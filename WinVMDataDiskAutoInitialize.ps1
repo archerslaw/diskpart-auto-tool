@@ -1,8 +1,8 @@
+# WinVMDataDiskAutoInitialize Powered by PowerShell
 # Author: Archers Law <archerslaw@163.com>	
 # Description: Auto diskpart tool for Windows OS	
 # Github URL: https://github.com/archerslaw/diskpart-auto-tool
 
-# WinVMDataDiskAutoInitialize Powered by PowerShell
 # Bypass ExecutionPolicy and UTF8 Encoding
 Set-ExecutionPolicy -ExecutionPolicy Bypass -Force
 chcp 65001
