@@ -11,13 +11,9 @@ chcp 65001
 
 $diskpartCmd = 'LIST DISK'
 $disks = $diskpartCmd | diskpart.exe
-$volumepartCmd = 'LIST VOLUME'
-$volumes = $volumepartCmd | diskpart.exe
 
 Write-Host "Print the disk list info:"
 $disks
-Write-Host "Print the volume list info:"
-$volumes
 
 foreach ($line in $disks)
 {
@@ -49,6 +45,7 @@ foreach ($line in $disks)
 
 $volumepartCmd = 'LIST VOLUME'
 $volumes = $volumepartCmd | diskpart.exe
+
 Write-Host "Print the volume list info:"
 $volumes
 
@@ -85,6 +82,7 @@ foreach ($line in $volumes)
 
 $diskpartCmd = 'LIST DISK'
 $disks = $diskpartCmd | diskpart.exe
+
 Write-Host "Print the disk list info:"
 $disks
 
