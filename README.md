@@ -19,6 +19,15 @@ WinVMDataDiskAutoInitialize.ps1 is written using the powershell that applicable 
    Download the WinVMDataDiskAutoInitialize.ps1 and right double-kick it running with PowerShell
    
    https://raw.githubusercontent.com/archerslaw/diskpart-auto-tool/master/WinVMDataDiskAutoInitialize.ps1
+   
+   Or you can deploy the PowerShell scripts from the startup task scheduler.
+   User account: SYSTEM
+   Trigger: At log on
+   Action: Start a program
+   Program/script: Powershell.exe
+   Full arguments: -ExecutionPolicy Bypass C:\Windows\System32\WinVMDataDiskAutoInitialize.ps1
+   
+   https://community.spiceworks.com/how_to/17736-run-powershell-scripts-from-task-scheduler
    ```
 
 ## License
