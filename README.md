@@ -27,7 +27,7 @@ WinVMDataDiskAutoInitialize.ps1 is written using the powershell that applicable 
    Program/script: Powershell.exe
    Full arguments: -ExecutionPolicy Bypass C:\Windows\System32\WinVMDataDiskAutoInitialize.ps1
    
-   [https://community.spiceworks.com/how_to/17736-run-powershell-scripts-from-task-scheduler](https://community.spiceworks.com/how_to/17736-run-powershell-scripts-from-task-scheduler)
+   https://community.spiceworks.com/how_to/17736-run-powershell-scripts-from-task-scheduler
    ```
 
 ## License
