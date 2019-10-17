@@ -3,11 +3,8 @@
 # Description: Auto diskpart tool for Windows OS	
 # Github URL: https://github.com/archerslaw/diskpart-auto-tool
 
-# Bypass ExecutionPolicy and UTF8 Encoding
+# Set Bypass ExecutionPolicy
 Set-ExecutionPolicy -ExecutionPolicy Bypass -Force
-chcp 65001
-[Console]::OutputEncoding=[System.Text.Encoding]::UTF8
-[Console]::OutputEncoding
 
 $diskpartCmd = 'LIST DISK'
 $disks = $diskpartCmd | diskpart.exe
