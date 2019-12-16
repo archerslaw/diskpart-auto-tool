@@ -59,9 +59,9 @@ foreach ($line in $volumes)
 				SELECT VOLUME $volumeNumber
 				EXTEND NOERR
 				EXIT
-            @"
+			@"
 			Write-Host "Start to extend the DataDisk:" $volumeNumber
-		    $volumepartCmd | diskpart.exe | Out-Null
+			$volumepartCmd | diskpart.exe | Out-Null
 			
 			Start-Sleep -Seconds 0.1
 			Write-Host "Complete to extend the DataDisk:" $volumeNumber
