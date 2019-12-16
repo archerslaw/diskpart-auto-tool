@@ -110,7 +110,7 @@ foreach ($line in $disks)
 					EXIT
 				@"
 				Write-Host "Start to initialize the DataDisk:" $diskNumber
-		    	$diskpartCmd | diskpart.exe | Out-Null
+				$diskpartCmd | diskpart.exe | Out-Null
 			
 				Start-Sleep -Seconds 0.1
 				Write-Host "Complete to initialize the DataDisk:" $diskNumber
