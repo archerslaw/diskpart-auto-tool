@@ -22,7 +22,7 @@ foreach ($line in $disks)
 			$diskpartCmd = "@
 				SELECT DISK $diskNumber
 				ONLINE DISK
-				ATTRIBUTES DISK CLEAR READONLY
+				SAN POLICY=OnlineAll
 				EXIT
 			@"
 			Write-Host "Set ONLINE and clear READONLY with DataDisk:" $diskNumber
@@ -140,5 +140,3 @@ Write-Host "Print the disk list info:"
 $disks
 Write-Host "Print the volume list info:"
 $volumes
-
-Get-Service -Name "vds" | Where {$_.status –eq "Running"} | Stop-Service -Force | Out-Null
