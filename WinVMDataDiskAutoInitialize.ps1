@@ -141,4 +141,4 @@ $disks
 Write-Host "Print the volume list info:"
 $volumes
 
-Get-Service -Name "vds" | Where {$_.status –eq 'Running'} | Stop-Service -Force | Out-Null
+Get-Service -Name "vds" | Where {$_.status –eq "Running"} | Stop-Service -Force | Out-Null
