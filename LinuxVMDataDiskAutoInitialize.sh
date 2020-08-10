@@ -1,8 +1,9 @@
 #!/bin/bash
 
-# Author: Archers Law <archerslaw@163.com>
+# Author:      Seaton Jiang <seaton@vtrois.com>
+# Maintainer:  Archers Law <archerslaw@163.com>
 # Description: Auto diskpart tool for Linux OS
-# Github URL: https://github.com/archerslaw/diskpart-auto-tool
+# Github URL:  https://github.com/archerslaw/diskpart-auto-tool
 
 export PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/root/bin
 clear
