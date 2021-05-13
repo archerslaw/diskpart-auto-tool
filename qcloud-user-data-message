@@ -39,3 +39,4 @@ May 13 09:42:56 VM-0-14-centos cloud-init[1328]: # units generated from this fil
 May 13 09:42:56 VM-0-14-centos cloud-init[1328]: #
 May 13 09:42:56 VM-0-14-centos cloud-init[1328]: UUID=659e6f89-71fa-463d-842e-ccdf2c06e0fe /                       ext4    defaults        1 1
 May 13 09:42:56 VM-0-14-centos cloud-init[1328]: /dev/vdb /mnt/datadisk0 ext4 defaults 0 0
+
