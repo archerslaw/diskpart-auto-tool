@@ -1,0 +1,78 @@
+#!/bin/bash
+set -o errexit
+
+echo "Ready to initialize disks"
+
+UserFsType='ext4'
+UserMount='/mnt/datadisk0'
+
+echo "Check out all active disks:"
+fdisk -l 2>&1 | grep -o "Disk /dev/.*d[a-z]" | grep -v "/dev/vda"
+
+
+check_new_or_not() {
+	echo "Check whether this instance is new or not"
+	for Disk in `fdisk -l 2>&1 | grep -o "Disk /dev/.*d[a-z]" | grep -v "/dev/vda" | awk '{print $2}'`; 
+	do
+		lines=`hexdump -C -n 1048576 $Disk | wc -l`
+		echo "Counting $lines lines from $Disk"
+		if [ $lines -gt 3 ]; then
+			echo "Not a new instance, stop initializing disks"	
+			exit
+		fi
+		
+		echo "$col" | cut -d ':' -f 2
+	done
+	
+	echo "New instance"
+}
+
+init_disk() {
+	DiskNum=0
+	for Disk in `fdisk -l 2>&1 | grep -o "Disk /dev/.*d[a-z]" | grep -v "/dev/vda" | awk '{print $2}'`;
+	do
+		DiskNum=`expr $DiskNum + 1`
+	done 
+	echo "Detect $DiskNum datadisks"
+	if [ $DiskNum -gt 1 ]
+	then
+		init_multiple_disk
+	else
+		Disk=`fdisk -l 2>&1 | grep -o "Disk /dev/.*d[a-z]" | grep -v "/dev/vda" | awk '{print $2}'`
+		init_single_disk $UserMount $Disk $UserFsType 
+	fi
+}
+
+
+init_multiple_disk() {
+	index=0
+	for disk in `fdisk -l 2>&1 | grep -o "Disk /dev/.*d[a-z]" | grep -v "/dev/vda" | awk '{print $2}'`;
+	do
+		MountDir='/mnt/datadisk'$index''
+		init_single_disk $MountDir $disk 'ext4'
+		index=`expr $index + 1`
+	done
+}
+
+init_single_disk() {
+	MountDir=$1
+	Disk=$2
+	FsType=$3
+	echo 'Initializing '$Disk''
+	mkfs -t $FsType $Disk  2>&1
+	mkdir -p $MountDir 2>&1
+	mount $Disk $MountDir
+	temp=`echo $Disk | sed 's;/;\\\/;g'`
+	sed -i -e "/^$temp/d" /etc/fstab
+	echo $Disk $MountDir $FsType 'defaults 0 0' >> /etc/fstab
+	echo 'Finish initializing '$Disk', mounted on '$MountDir''
+}
+
+check_new_or_not
+
+init_disk
+
+df -h
+
+echo 'Showing /etc/fstab'
+cat /etc/fstab
