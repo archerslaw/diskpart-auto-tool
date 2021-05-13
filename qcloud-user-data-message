@@ -1,0 +1,41 @@
+May 13 09:42:55 VM-0-14-centos cloud-init[1328]: Ready to initialize disks
+May 13 09:42:55 VM-0-14-centos cloud-init[1328]: Check out all active disks:
+May 13 09:42:55 VM-0-14-centos cloud-init[1328]: Disk /dev/vdb
+May 13 09:42:55 VM-0-14-centos cloud-init[1328]: Check whether this instance is new or not
+May 13 09:42:55 VM-0-14-centos cloud-init[1328]: Counting 3 lines from /dev/vdb
+May 13 09:42:55 VM-0-14-centos cloud-init[1328]: New instance
+May 13 09:42:55 VM-0-14-centos cloud-init[1328]: Detect 1 datadisks
+May 13 09:42:55 VM-0-14-centos cloud-init[1328]: Initializing /dev/vdb
+May 13 09:42:55 VM-0-14-centos cloud-init[1328]: mke2fs 1.45.4 (23-Sep-2019)
+May 13 09:42:55 VM-0-14-centos cloud-init[1328]: Creating filesystem with 5242880 4k blocks and 1310720 inodes
+May 13 09:42:55 VM-0-14-centos cloud-init[1328]: Filesystem UUID: cad7155a-b2d5-43d2-827b-68082316d87e
+May 13 09:42:55 VM-0-14-centos cloud-init[1328]: Superblock backups stored on blocks:
+May 13 09:42:55 VM-0-14-centos cloud-init[1328]: #01132768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632, 2654208,
+May 13 09:42:55 VM-0-14-centos cloud-init[1328]: #0114096000
+May 13 09:42:55 VM-0-14-centos cloud-init[1328]: Allocating group tables:   0/160#010#010#010#010#010#010#010       #010#010#010#010#010#010#010done
+May 13 09:42:55 VM-0-14-centos cloud-init[1328]: Writing inode tables:   0/160#010#010#010#010#010#010#010       #010#010#010#010#010#010#010done
+May 13 09:42:56 VM-0-14-centos cloud-init[1328]: Creating journal (32768 blocks): done
+May 13 09:42:56 VM-0-14-centos cloud-init[1328]: Writing superblocks and filesystem accounting information:   0/160#010#010#010#010#010#010#010       #010#010#010#010#010#010#010done
+May 13 09:42:56 VM-0-14-centos systemd[1]: Reloading.
+May 13 09:42:56 VM-0-14-centos kernel: EXT4-fs (vdb): mounted filesystem with ordered data mode. Opts: (null)
+May 13 09:42:56 VM-0-14-centos cloud-init[1328]: Finish initializing /dev/vdb, mounted on /mnt/datadisk0
+May 13 09:42:56 VM-0-14-centos cloud-init[1328]: Filesystem      Size  Used Avail Use% Mounted on
+May 13 09:42:56 VM-0-14-centos cloud-init[1328]: devtmpfs        900M     0  900M   0% /dev
+May 13 09:42:56 VM-0-14-centos cloud-init[1328]: tmpfs           914M     0  914M   0% /dev/shm
+May 13 09:42:56 VM-0-14-centos cloud-init[1328]: tmpfs           914M  424K  914M   1% /run
+May 13 09:42:56 VM-0-14-centos cloud-init[1328]: tmpfs           914M     0  914M   0% /sys/fs/cgroup
+May 13 09:42:56 VM-0-14-centos cloud-init[1328]: /dev/vda1        50G  2.2G   45G   5% /
+May 13 09:42:56 VM-0-14-centos cloud-init[1328]: /dev/vdb         20G   45M   19G   1% /mnt/datadisk0
+May 13 09:42:56 VM-0-14-centos cloud-init[1328]: Showing /etc/fstab
+May 13 09:42:56 VM-0-14-centos cloud-init[1328]: #
+May 13 09:42:56 VM-0-14-centos cloud-init[1328]: # /etc/fstab
+May 13 09:42:56 VM-0-14-centos cloud-init[1328]: # Created by anaconda on Tue Nov 26 02:11:36 2019
+May 13 09:42:56 VM-0-14-centos cloud-init[1328]: #
+May 13 09:42:56 VM-0-14-centos cloud-init[1328]: # Accessible filesystems, by reference, are maintained under '/dev/disk/'.
+May 13 09:42:56 VM-0-14-centos cloud-init[1328]: # See man pages fstab(5), findfs(8), mount(8) and/or blkid(8) for more info.
+May 13 09:42:56 VM-0-14-centos cloud-init[1328]: #
+May 13 09:42:56 VM-0-14-centos cloud-init[1328]: # After editing this file, run 'systemctl daemon-reload' to update systemd
+May 13 09:42:56 VM-0-14-centos cloud-init[1328]: # units generated from this file.
+May 13 09:42:56 VM-0-14-centos cloud-init[1328]: #
+May 13 09:42:56 VM-0-14-centos cloud-init[1328]: UUID=659e6f89-71fa-463d-842e-ccdf2c06e0fe /                       ext4    defaults        1 1
+May 13 09:42:56 VM-0-14-centos cloud-init[1328]: /dev/vdb /mnt/datadisk0 ext4 defaults 0 0
