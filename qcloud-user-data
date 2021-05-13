@@ -76,3 +76,4 @@ df -h
 
 echo 'Showing /etc/fstab'
 cat /etc/fstab
+
